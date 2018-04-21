@@ -11,7 +11,12 @@ def extractResourceUsage(out):
 
 def memoryOptimizer(id,totalMemory):
 	totalMemory=totalMemory[:-3]
-	updateCommand="docker update "+id+" -m=\""+str(int(totalMemory)*2)+"mb\"";
+	memoryUnit=totalMemory[-3:]
+	if(memoryUnit=="GiB"):
+		memoryUnit="g"
+	else:
+		memoryUnit="mb"
+	updateCommand="docker update "+id+" -m=\""+str(int(totalMemory)*2)+memoryUnit+"\"";
 	print(updateCommand)
 	os.system(updateCommand)
 	return
