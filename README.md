@@ -3,8 +3,11 @@
 **randomNumberSort.py**
 
 python randomNumberSort.py param1 param2 
+
 	-param1 : repetation
+	
 	-param2 : number of random values
+	
 **resourceOptimizer.py**
 
 python resourceOptimizer.py
